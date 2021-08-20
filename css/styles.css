@@ -656,7 +656,7 @@ textarea {
   transition: opacity var(--transition-options);
 }
 
-.backdrop.is-hidden {
+.backdrop--is-hidden {
   opacity: 0;
   pointer-events: none;
 }
@@ -676,7 +676,7 @@ textarea {
   transition: opacity var(--transition-options);
 }
 
-.modal-close-button {
+.modal__close-button {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -688,20 +688,18 @@ textarea {
   transition: fill var(--transition-options);
 }
 
-.modal-close-button:hover .close-button-icon {
+.modal__close-button:hover .modal__close-button-icon {
   fill: var(--accent-color);
 }
 
-.callback {
+/* Callback Form block styles */
+
+.callback-form {
   width: 100%;
   padding: 40px;
 }
 
-.form-callback-field {
-  position: relative;
-}
-
-.form-title {
+.callback-form__title {
   margin-bottom: 12px;
   color: var(--tittle-text-color);
   font-weight: 700;
@@ -711,18 +709,19 @@ textarea {
   letter-spacing: 0.03em;
 }
 
-.form-callback-field {
+.callback-form__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   list-style: none;
   margin-bottom: 10px;
 }
 
-.form-callback-field:last-child {
+.callback-form__item:last-child {
   margin-bottom: 20px;
 }
 
-.form-callback-field .form-label {
+.callback-form__label {
   margin-bottom: 4px;
   font-weight: 400;
   font-size: 12px;
@@ -730,27 +729,28 @@ textarea {
   letter-spacing: 0.01em;
 }
 
-.form-callback-icon {
+.callback-form__input {
+  padding: 12px 40px;
+}
+
+.callback-form__icon {
   position: absolute;
   left: 15px;
   top: 50%;
   transition: fill var(--transition-options);
 }
 
-.form-input:focus + .form-callback-icon {
+.callback-form__input:focus + .callback-form__icon {
   fill: var(--accent-color);
 }
 
-.form-callback-field .form-input {
-  padding: 12px 40px;
-}
-
-.form-callback-field .form-comment {
+.callback-form__comment {
   padding: 12px 16px;
+  height: 120px;
 }
 
-.form-callback-field .form-input,
-.form-callback-field .form-comment {
+.callback-form__input,
+.callback-form__comment {
   margin: 0;
   border-radius: 4px;
   color: var(--tittle-text-color);
@@ -759,8 +759,8 @@ textarea {
   outline: none;
 }
 
-.form-callback-field .form-input::placeholder,
-.form-callback-field .form-comment::placeholder {
+.callback-form__input::placeholder,
+.callback-form__comment::placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
@@ -768,16 +768,12 @@ textarea {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-comment {
-  height: 120px;
-}
-
-.form-callback-field .form-input:focus,
-.form-callback-field .form-comment:focus {
+.callback-form__input:focus,
+.callback-form__comment:focus {
   border: 1px solid var(--accent-color);
 }
 
-.form-checkbox {
+.callback-form__checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -789,7 +785,7 @@ textarea {
   letter-spacing: 0.03em;
 }
 
-.form-custom-checkbox {
+.callback-form__checkbox--custom {
   /* -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -809,7 +805,7 @@ textarea {
   overflow: hidden;
 }
 
-.form-checkbox-icon {
+.callback-form__check-mark {
   display: inline-block;
   margin-right: 8px;
   width: 15px;
@@ -818,7 +814,7 @@ textarea {
   border-radius: 2px;
 }
 
-.form-custom-checkbox:checked + .form-checkbox-icon {
+.callback-form__checkbox--custom:checked + .callback-form__check-mark {
   border-color: transparent;
   background-color: var(--accent-color);
   background-image: url("../images/checkbox-on.svg");
@@ -827,109 +823,94 @@ textarea {
   background-repeat: no-repeat;
 }
 
-.agreement-modal {
+.acallback-form__agreement {
   color: var(--accent-color);
 }
 
-.form-submit-position {
+.callback-form__button {
   text-align: center;
 }
 
-.form-submit {
+.button--callback-form {
   padding: 10px 55px;
-  color: var(--secondary-text-color);
-  background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: none;
-  border-radius: 4px;
-  transition: background-color var(--transition-options);
 }
 
-.form-submit:hover,
-.form-submit:focus {
+.button--callback-form:hover,
+.button--callback-form:focus {
   background-color: var(--button-background-color);
 }
 
-/* portfolio styles */
+/* Portfolio section styles */
 
 .portfolio {
   padding: 94px 0;
 }
 
-.buttons {
+.button--portfolio-filtres {
   padding: 6px 22px;
   color: var(--tittle-text-color);
   background-color: var(--unique-background-color);
-  border: none;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1.6;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color var(--transition-options),
-    color var(--transition-options), box-shadow var(--transition-options);
 }
 
-.buttons:hover,
-.buttons:focus,
-.filtres .current {
+.button--portfolio-filtres:hover,
+.button--portfolio-filtres:focus,
+.portfolio__filtres--current {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   color: var(--secondary-text-color);
   background-color: var(--accent-color);
 }
 
-.filtres .current:hover,
-.filtres .current:focus {
+.portfolio__filtres--current:hover,
+.portfolio__filtres--current:focus {
   background-color: var(--button-background-color);
 }
 
-.filtres {
+.portfolio__filtres {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  list-style: none;
 }
 
-.filtres .item + .item {
+.portfolio__item + .portfolio__item {
   margin-left: 8px;
 }
+
+/* Portfolio Projects block styles */
 
 .projects {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
 }
 
-.projects-border {
+.projects__indent {
   position: relative;
-  /* аналогичное решение вместе с обнулениями маржинов -- width: calc((100% - 2 * 30px) / 3); 30px - ширина маржина * на кол-во маржинов. Больше объектов -> больше маржинов (всегда на 1 меньше) -> больше пикселей */
   margin-right: 30px;
   margin-bottom: 30px;
+  /* аналогичное решение вместе с обнулениями маржинов -- width: calc((100% - 2 * 30px) / 3); 30px - ширина маржина * на кол-во маржинов. Больше объектов -> больше маржинов (всегда на 1 меньше) -> больше пикселей */
 }
 
-.projects-border:nth-child(3n) {
+.projects__indent:nth-child(3n) {
   margin-right: 0;
 }
 
-.projects-border:nth-last-child(-n + 3) {
+.projects__indent:nth-last-child(-n + 3) {
   margin-bottom: 0px;
 }
 
-/* .projects-border:not(:nth-child(3n)) {
+/* .projects__indent:not(:nth-child(3n)) {
   margin-right: 30px;
 }
  --- Прекрасный пример альтернативного производства сетки ---
-.projects-border:not(:nth-last-child(-n + 3)) {
+.projects__indent:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 } */
 
-.projects-position {
-  padding: 20px 24px;
-  border: 1px solid #eeeeee;
-  border-top: none;
-}
-
-.projects-link {
+.projects__link {
   display: block;
   height: 100%;
   color: var(--primary-text-color);
@@ -938,30 +919,22 @@ textarea {
   text-decoration: none;
 }
 
-.projects-link:hover::after {
+.projects__link:hover::after {
   transform: translateY(0);
 }
 
-.projects-link:hover,
-.projects-link:focus {
+.projects__link:hover,
+.projects__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.projects-title-color {
-  margin-bottom: 4px;
-  font-size: 18px;
-  line-height: 2;
-  font-weight: 700;
-  color: var(--tittle-text-color);
-}
-
-.projects-thumb {
+.projects__thumb {
   position: relative;
   overflow: hidden;
 }
 
-.projects-overlay {
+.projects__overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -972,7 +945,12 @@ textarea {
   transition: transform var(--transition-options);
 }
 
-.projects-overlay-disc {
+.projects__link:hover .projects__overlay,
+.projects__link:focus .projects__overlay {
+  transform: translateY(0%);
+}
+
+.projects__discription {
   color: var(--secondary-text-color);
   padding: 63px 24px;
   font-size: 18px;
@@ -980,7 +958,16 @@ textarea {
   letter-spacing: 0.03em;
 }
 
-.projects-link:hover .projects-overlay,
-.projects-link:focus .projects-overlay {
-  transform: translateY(0%);
+.projects__border {
+  padding: 20px 24px;
+  border: 1px solid #eeeeee;
+  border-top: none;
+}
+
+.projects__title {
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 700;
+  color: var(--tittle-text-color);
 }
