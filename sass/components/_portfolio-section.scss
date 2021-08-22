@@ -8,12 +8,6 @@
     background-color: $button-focus-background-color;
   }
 
-  &__filtres--current {
-    box-shadow: $portfolio-filtres-shadow;
-    color: $secondary-text-color;
-    background-color: $accent-color;
-  }
-
   &__filtres {
     display: flex;
     justify-content: center;
@@ -39,6 +33,12 @@
   }
 }
 
+.portfolio__filtres--current {
+    box-shadow: $portfolio-filtres-shadow;
+    color: $secondary-text-color;
+    background-color: $accent-color;
+  }
+  
 // Portfolio Projects block styles
 
 .projects {
